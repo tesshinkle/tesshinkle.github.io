@@ -2,6 +2,7 @@
 title: "Tess Hinkle"
 image: images/MSU_logo.png
 about:
+  id: intro-heading
   template: trestles
   links: 
     - icon: LinkedIn
