@@ -1,0 +1,45 @@
+---
+title: "Tess Hinkle"
+image: images/MSU_logo.png
+about:
+  template: trestles
+  links: 
+    - icon: LinkedIn
+      text: LinkedIn
+      href: https://www.linkedin.com
+    - icon: GitHub
+      text: GitHub
+      href: https://github.com/tesshinkle
+    - icon: envelope
+      text: Email
+      href: mailto:isabellajudehinkle@gmail.com
+---
+
+::: {#intro-heading}
+
+Hi, thanks so much for visiting my website!
+
+## Education
+Murray State University | Murray, KY | Bachelor's in Mathematics
+
+## Experience
+
+Carnegie Mellon University Undergratuate Research Experience
+
+## About Me
+
+blah blah blah
+![](images/MSU_logo.png)
+
+
+<br>
+:::
+
+
+This is a Quarto website.
+
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+
+```{r}
+1 + 1
+```
