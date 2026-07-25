@@ -25,12 +25,11 @@ Murray State University | Murray, KY | Bachelor's in Mathematics
 
 ## Experience
 
-Carnegie Mellon University Undergratuate Research Experience
+Carnegie Mellon University Undergraduate Research Experience in Sports Analytics. My research topic was **Quantifying Faceoffs and Identifying High Leverage Performance in the NHL** and was collaborated on with Chloe Guagliano and Jack Pallotta and sponsored by the Pittsburgh Penguins.
 
 ## About Me
 
-blah blah blah
-![](images/MSU_logo.png)
+I am a current undergraduate Junior at Murray State University majoring in Mathematics and minoring in Statistics. Some of my favorite sports include Formula One, gymnastics, and pole vault.
 
 
 <br>
@@ -40,7 +39,3 @@ blah blah blah
 This is a Quarto website.
 
 To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
-
-```{r}
-1 + 1
-```
