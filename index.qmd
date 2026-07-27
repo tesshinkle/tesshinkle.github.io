@@ -7,7 +7,7 @@ about:
   links: 
     - icon: LinkedIn
       text: LinkedIn
-      href: https://www.linkedin.com
+      href: https://www.linkedin.com/in/mary-thérèse-hinkle
     - icon: GitHub
       text: GitHub
       href: https://github.com/tesshinkle
