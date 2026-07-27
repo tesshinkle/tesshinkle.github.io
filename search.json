@@ -4,7 +4,7 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "project1\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Undergraduate Research\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -44,8 +44,8 @@
   {
     "objectID": "projects/project1.html",
     "href": "projects/project1.html",
-    "title": "project1",
+    "title": "Undergraduate Research",
     "section": "",
-    "text": "Undergraduate Research\nMy current undergraduate research is Formula One Sports Analytics."
+    "text": "Does Age Impact Success in Formula One\nMy current undergraduate research is Formula One Sports Analytics. In Spring 2026 I looked into if age impacted the yearly points of a driver. With this I created a Generalized Additive Mixed Model of the ages of the drivers, the individual drivers, and the respective season (2016-2025)."
   }
 ]
