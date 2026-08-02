@@ -1,0 +1,8 @@
+---
+title: "Summer 2026"
+format: html
+---
+
+#### Quantifying Faceoffs and Identifying High-Leverage Performance in the NHL
+
+The following project looked at faceoffs and leverage in the NHL

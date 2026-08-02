@@ -1,0 +1,10 @@
+---
+title: "Tidy Tuesday Challenges"
+description: "My weekly data visualization entries and code configurations."
+format: html
+listing:
+  contents: tidytuesday_challenges
+  type: grid
+---
+
+Welcome to my Tidy Tuesday hub! Below you can find my weekly submissions.
