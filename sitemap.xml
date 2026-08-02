@@ -2,7 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://tesshinkle.github.io/projects.html</loc>
-    <lastmod>2026-07-20T14:56:41.687Z</lastmod>
+    <lastmod>2026-08-02T21:57:28.695Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tesshinkle.github.io/projects/tidytuesday.html</loc>
+    <lastmod>2026-08-02T21:56:19.030Z</lastmod>
   </url>
   <url>
     <loc>https://tesshinkle.github.io/projects/project1.html</loc>
@@ -19,5 +23,9 @@
   <url>
     <loc>https://tesshinkle.github.io/projects/project2.html</loc>
     <lastmod>2026-07-27T02:15:39.922Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tesshinkle.github.io/projects/tidytuesday_challenges/Ecotourism.html</loc>
+    <lastmod>2026-08-02T21:26:01.434Z</lastmod>
   </url>
 </urlset>

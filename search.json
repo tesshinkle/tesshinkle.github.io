@@ -4,7 +4,14 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "Summer 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUndergraduate Research\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Ecotourism\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSummer 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTidy Tuesday Challenges\n\n\nMy weekly data visualization entries and code configurations.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUndergraduate Research\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "projects/tidytuesday.html",
+    "href": "projects/tidytuesday.html",
+    "title": "Tidy Tuesday Challenges",
+    "section": "",
+    "text": "Welcome to my Tidy Tuesday hub! Below you can find my weekly submissions.\n\n\n\n\n\n\n\n\n\n\n\n\nEcotourism\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "projects/project1.html",
@@ -54,5 +61,12 @@
     "title": "Summer 2026",
     "section": "",
     "text": "Quantifying Faceoffs and Identifying High-Leverage Performance in the NHL\nThe following project looked at faceoffs and leverage in the NHL"
+  },
+  {
+    "objectID": "projects/tidytuesday_challenges/Ecotourism.html",
+    "href": "projects/tidytuesday_challenges/Ecotourism.html",
+    "title": "Ecotourism",
+    "section": "",
+    "text": "Text Here"
   }
 ]

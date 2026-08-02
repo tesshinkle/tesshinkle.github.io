@@ -2,8 +2,16 @@
   {
     "listing": "/projects.html",
     "items": [
+      "/projects/tidytuesday_challenges/Ecotourism.html",
       "/projects/project2.html",
+      "/projects/tidytuesday.html",
       "/projects/project1.html"
+    ]
+  },
+  {
+    "listing": "/projects/tidytuesday.html",
+    "items": [
+      "/projects/tidytuesday_challenges/Ecotourism.html"
     ]
   }
 ]
