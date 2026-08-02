@@ -6,6 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Tess Hinkle">
+<meta name="dcterms.date" content="2026-08-02">
 
 <title>Ecotourism – Tess Hinkle</title>
 <style>
@@ -79,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -285,12 +287,25 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#question-one" id="toc-question-one" class="nav-link active" data-scroll-target="#question-one">Question One</a></li>
+  <li><a href="#question-two" id="toc-question-two" class="nav-link" data-scroll-target="#question-two">Question Two</a></li>
+  <li><a href="#question-three" id="toc-question-three" class="nav-link" data-scroll-target="#question-three">Question Three</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#sources" id="toc-sources" class="nav-link" data-scroll-target="#sources">Sources</a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
     </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content column-page-right" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -300,9 +315,21 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="quarto-title-meta column-page">
+<div class="quarto-title-meta column-page-right">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Tess Hinkle </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 2, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -312,9 +339,1632 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Text Here</p>
+<p>The July 28th <a href="https://github.com/rfordatascience/tidytuesday/blob/main/data/2026/2026-07-28/readme.md">Tidy Tuesday</a> challenge was centered around ecotourism in Australia. The data was sourced from the <code>ecotourism</code> R package. The R package provides tools to analyse ecological observation data alongside weather conditions and tourism data.</p>
+<section id="question-one" class="level2">
+<h2 class="anchored" data-anchor-id="question-one">Question One</h2>
+<p>The first Question in the ecotourism challenge is <strong>Under which weather conditions are you most likely to observe a Gouldian finch?</strong></p>
+<p>I combined the occurrences and weather csv files into one data set. I did a <code>right_join()</code> function on the two csv files and joined it by the <code>ws_id</code>, <code>date</code>, <code>year</code>, <code>month</code>, <code>day</code>, <code>weekday</code>, and <code>dayofyear</code> variables. After I joined these two files into one data set I then wanted only the data for the Gouldian finches and weather variables.</p>
+<p>The following six rows of data is a snippet of the data set I used to answer the question. The <code>temperature</code> and <code>dew point</code> columns are measured in degrees Celsius. The <code>rh</code>(raw humidity) is a percentage and <code>precipitation</code> is measured in mm while <code>wind speed</code> is measured in m/s.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="gvlsttxtxe" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#gvlsttxtxe table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#gvlsttxtxe thead, #gvlsttxtxe tbody, #gvlsttxtxe tfoot, #gvlsttxtxe tr, #gvlsttxtxe td, #gvlsttxtxe th {
+  border-style: none;
+}
+
+#gvlsttxtxe p {
+  margin: 0;
+  padding: 0;
+}
+
+#gvlsttxtxe .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#gvlsttxtxe .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#gvlsttxtxe .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#gvlsttxtxe .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#gvlsttxtxe .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#gvlsttxtxe .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gvlsttxtxe .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#gvlsttxtxe .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#gvlsttxtxe .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#gvlsttxtxe .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#gvlsttxtxe .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#gvlsttxtxe .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#gvlsttxtxe .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#gvlsttxtxe .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#gvlsttxtxe .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#gvlsttxtxe .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#gvlsttxtxe .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#gvlsttxtxe .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#gvlsttxtxe .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gvlsttxtxe .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#gvlsttxtxe .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#gvlsttxtxe .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#gvlsttxtxe .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gvlsttxtxe .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#gvlsttxtxe .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#gvlsttxtxe .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gvlsttxtxe .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gvlsttxtxe .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#gvlsttxtxe .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gvlsttxtxe .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#gvlsttxtxe .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gvlsttxtxe .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#gvlsttxtxe .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gvlsttxtxe .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#gvlsttxtxe .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gvlsttxtxe .gt_left {
+  text-align: left;
+}
+
+#gvlsttxtxe .gt_center {
+  text-align: center;
+}
+
+#gvlsttxtxe .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#gvlsttxtxe .gt_font_normal {
+  font-weight: normal;
+}
+
+#gvlsttxtxe .gt_font_bold {
+  font-weight: bold;
+}
+
+#gvlsttxtxe .gt_font_italic {
+  font-style: italic;
+}
+
+#gvlsttxtxe .gt_super {
+  font-size: 65%;
+}
+
+#gvlsttxtxe .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#gvlsttxtxe .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#gvlsttxtxe .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#gvlsttxtxe .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#gvlsttxtxe .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#gvlsttxtxe .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#gvlsttxtxe .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#gvlsttxtxe .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#gvlsttxtxe div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_col_headings header">
+<th id="temp" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">temp</th>
+<th id="dewp" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">dewp</th>
+<th id="rh" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">rh</th>
+<th id="prcp" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">prcp</th>
+<th id="wind_speed" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">wind_speed</th>
+<th id="organism_name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">organism_name</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_right" headers="temp">24.9</td>
+<td class="gt_row gt_right" headers="dewp">19.1</td>
+<td class="gt_row gt_right" headers="rh">70.2</td>
+<td class="gt_row gt_right" headers="prcp">0</td>
+<td class="gt_row gt_right" headers="wind_speed">2.8</td>
+<td class="gt_row gt_left" headers="organism_name">Gouldian finch</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="temp">23.1</td>
+<td class="gt_row gt_right" headers="dewp">16.1</td>
+<td class="gt_row gt_right" headers="rh">64.7</td>
+<td class="gt_row gt_right" headers="prcp">0</td>
+<td class="gt_row gt_right" headers="wind_speed">2.5</td>
+<td class="gt_row gt_left" headers="organism_name">Gouldian finch</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="temp">23.1</td>
+<td class="gt_row gt_right" headers="dewp">17.7</td>
+<td class="gt_row gt_right" headers="rh">71.7</td>
+<td class="gt_row gt_right" headers="prcp">0</td>
+<td class="gt_row gt_right" headers="wind_speed">2.3</td>
+<td class="gt_row gt_left" headers="organism_name">Gouldian finch</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="temp">25.8</td>
+<td class="gt_row gt_right" headers="dewp">16.2</td>
+<td class="gt_row gt_right" headers="rh">55.4</td>
+<td class="gt_row gt_right" headers="prcp">0</td>
+<td class="gt_row gt_right" headers="wind_speed">2.8</td>
+<td class="gt_row gt_left" headers="organism_name">Gouldian finch</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="temp">25.4</td>
+<td class="gt_row gt_right" headers="dewp">20.1</td>
+<td class="gt_row gt_right" headers="rh">72.5</td>
+<td class="gt_row gt_right" headers="prcp">0</td>
+<td class="gt_row gt_right" headers="wind_speed">2.9</td>
+<td class="gt_row gt_left" headers="organism_name">Gouldian finch</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="temp">25.4</td>
+<td class="gt_row gt_right" headers="dewp">20.1</td>
+<td class="gt_row gt_right" headers="rh">72.5</td>
+<td class="gt_row gt_right" headers="prcp">0</td>
+<td class="gt_row gt_right" headers="wind_speed">2.9</td>
+<td class="gt_row gt_left" headers="organism_name">Gouldian finch</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>After combining the data and selecting specific weather variables and filtering for just the Gouldian Finch, I created density plots of the weather variables. This is to indicate which weather conditions the observations of the Gouldian finch is highest. The variable <code>rh</code> was not used as one of the density plots since dew point directly affects the raw humidity.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Ecotourism_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>From the graph we can notice that high observations of Gouldian Finches occur with relatively no precipitation and low wind speeds. High densities at the low end of precipitation and wind speed are plausible due to the fact that the Gouldian finch is a fairly small bird and may not fly with ease in high winds or high precipitation.</p>
+<p>There is also a fairly high density of Gouldian finch observations when the temperatures are in the mid to high 20s. This density could be due to increase of tourists in warmer weather rather than Gouldian finches just liking warm weather.</p>
+<p>The density plot of Gouldian finch observations with dew point is fairly spread out not telling us much information. The finch could not be effected by dew point or trips that observe the finch merely occur at various dew points.</p>
+</section>
+<section id="question-two" class="level2">
+<h2 class="anchored" data-anchor-id="question-two">Question Two</h2>
+<p>The second question in the ecotourism challenge is <strong>How does weather affect tourism numbers in each region?</strong></p>
+<p>To answer this question I combined the weather and tourism csv files. This was done by another <code>right_join()</code> function joining by the <code>ws_id</code> and <code>year</code> variable. After combining the two files, the new data set was grouped by the region, purpose of the visit, whether it was rainy or not, and the quarter of the year the trip occurred in. From this the total number of trips for each group was summarized and the average temperature of the trips in each group was calculated.</p>
+<p>The following six rows of data are a snippet of the data set created and used to answer the question. The column <code>total_trips</code> is in thousands and the <code>avg_temp</code> column is in degrees Celsius.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="rpnuliovuq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#rpnuliovuq table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#rpnuliovuq thead, #rpnuliovuq tbody, #rpnuliovuq tfoot, #rpnuliovuq tr, #rpnuliovuq td, #rpnuliovuq th {
+  border-style: none;
+}
+
+#rpnuliovuq p {
+  margin: 0;
+  padding: 0;
+}
+
+#rpnuliovuq .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#rpnuliovuq .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#rpnuliovuq .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#rpnuliovuq .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#rpnuliovuq .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#rpnuliovuq .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#rpnuliovuq .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#rpnuliovuq .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#rpnuliovuq .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#rpnuliovuq .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#rpnuliovuq .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#rpnuliovuq .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#rpnuliovuq .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#rpnuliovuq .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#rpnuliovuq .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#rpnuliovuq .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#rpnuliovuq .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#rpnuliovuq .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#rpnuliovuq .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rpnuliovuq .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#rpnuliovuq .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#rpnuliovuq .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#rpnuliovuq .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rpnuliovuq .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#rpnuliovuq .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#rpnuliovuq .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#rpnuliovuq .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rpnuliovuq .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#rpnuliovuq .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#rpnuliovuq .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#rpnuliovuq .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#rpnuliovuq .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#rpnuliovuq .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rpnuliovuq .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#rpnuliovuq .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rpnuliovuq .gt_left {
+  text-align: left;
+}
+
+#rpnuliovuq .gt_center {
+  text-align: center;
+}
+
+#rpnuliovuq .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#rpnuliovuq .gt_font_normal {
+  font-weight: normal;
+}
+
+#rpnuliovuq .gt_font_bold {
+  font-weight: bold;
+}
+
+#rpnuliovuq .gt_font_italic {
+  font-style: italic;
+}
+
+#rpnuliovuq .gt_super {
+  font-size: 65%;
+}
+
+#rpnuliovuq .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#rpnuliovuq .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#rpnuliovuq .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#rpnuliovuq .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#rpnuliovuq .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#rpnuliovuq .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#rpnuliovuq .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#rpnuliovuq .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#rpnuliovuq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_col_headings header">
+<th id="region" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">region</th>
+<th id="purpose" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">purpose</th>
+<th id="rainy" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">rainy</th>
+<th id="quarter" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">quarter</th>
+<th id="total_trips" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">total_trips</th>
+<th id="avg_temp" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">avg_temp</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="region">Anula</td>
+<td class="gt_row gt_left" headers="purpose">Holiday</td>
+<td class="gt_row gt_center" headers="rainy">0</td>
+<td class="gt_row gt_right" headers="quarter">4</td>
+<td class="gt_row gt_right" headers="total_trips">31.1850</td>
+<td class="gt_row gt_right" headers="avg_temp">27.62896</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="region">Anula</td>
+<td class="gt_row gt_left" headers="purpose">Holiday</td>
+<td class="gt_row gt_center" headers="rainy">1</td>
+<td class="gt_row gt_right" headers="quarter">4</td>
+<td class="gt_row gt_right" headers="total_trips">7.0350</td>
+<td class="gt_row gt_right" headers="avg_temp">27.64925</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="region">Augusta</td>
+<td class="gt_row gt_left" headers="purpose">Business</td>
+<td class="gt_row gt_center" headers="rainy">0</td>
+<td class="gt_row gt_right" headers="quarter">1</td>
+<td class="gt_row gt_right" headers="total_trips">1450.8503</td>
+<td class="gt_row gt_right" headers="avg_temp">17.29648</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="region">Augusta</td>
+<td class="gt_row gt_left" headers="purpose">Business</td>
+<td class="gt_row gt_center" headers="rainy">0</td>
+<td class="gt_row gt_right" headers="quarter">2</td>
+<td class="gt_row gt_right" headers="total_trips">3929.8136</td>
+<td class="gt_row gt_right" headers="avg_temp">17.23252</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="region">Augusta</td>
+<td class="gt_row gt_left" headers="purpose">Business</td>
+<td class="gt_row gt_center" headers="rainy">0</td>
+<td class="gt_row gt_right" headers="quarter">3</td>
+<td class="gt_row gt_right" headers="total_trips">3563.1971</td>
+<td class="gt_row gt_right" headers="avg_temp">17.34637</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="region">Augusta</td>
+<td class="gt_row gt_left" headers="purpose">Business</td>
+<td class="gt_row gt_center" headers="rainy">1</td>
+<td class="gt_row gt_right" headers="quarter">1</td>
+<td class="gt_row gt_right" headers="total_trips">744.7144</td>
+<td class="gt_row gt_right" headers="avg_temp">14.60800</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>After combining the data and the grouping by specific variables I created a scatter-plot. Each dot on the scatter-plot represent a grouped region with the x-axis being the average temperature of the grouped trips and the y-axis being the total trips of each grouped region. The points are then separated into whether the trips in the region were rainy (1) or not (0). The scatter-plot was then faceted to look at the four quarters of the year individually.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Ecotourism_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>From the scatter-plots we can tell that several regions had small total trip numbers which could be do to the popularity of the region. However, the total trip counts by region that are greater than 10,000,000 are mostly non rainy trips.</p>
+<p>We can also see a general increase in trips, both total number and overall increase in observations, when the temperature is greater than 15 degrees Celsius.</p>
+<p>Also, to note, the third quarter of the year shows the highest total_trips for a region. This high trip count may be due to visiting country’s summer months since people may be more likely to travel in July, August, and September to cooler weather (Australia is in winter during that time) in order to escape the heat.</p>
+</section>
+<section id="question-three" class="level2">
+<h2 class="anchored" data-anchor-id="question-three">Question Three</h2>
+<p>The third question in the ecotourism challenge is <strong>How do observations of the different animals relate to numbers of tourists?</strong></p>
+<p>To answer the question I combined the occurrences and tourism csv files with the <code>right_join</code> function by the <code>ws_id</code> and <code>year</code> columns. From this I then grouped the states where animals were observed, the type of observation (Human, Machine, etc.), and the type of organism. I then got the sum of tourist trips for each group and the total observations of each animal in the groups.</p>
+<p>The following six rows of data are a snippet of the data set created and used to answer the question. The column <code>total_trips</code> is reported in thousands.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="wvhozajqew" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wvhozajqew table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#wvhozajqew thead, #wvhozajqew tbody, #wvhozajqew tfoot, #wvhozajqew tr, #wvhozajqew td, #wvhozajqew th {
+  border-style: none;
+}
+
+#wvhozajqew p {
+  margin: 0;
+  padding: 0;
+}
+
+#wvhozajqew .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#wvhozajqew .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#wvhozajqew .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#wvhozajqew .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#wvhozajqew .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#wvhozajqew .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wvhozajqew .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#wvhozajqew .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#wvhozajqew .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#wvhozajqew .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#wvhozajqew .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#wvhozajqew .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#wvhozajqew .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#wvhozajqew .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#wvhozajqew .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#wvhozajqew .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#wvhozajqew .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#wvhozajqew .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#wvhozajqew .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wvhozajqew .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#wvhozajqew .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#wvhozajqew .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#wvhozajqew .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wvhozajqew .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#wvhozajqew .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#wvhozajqew .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wvhozajqew .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wvhozajqew .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#wvhozajqew .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wvhozajqew .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#wvhozajqew .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wvhozajqew .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#wvhozajqew .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wvhozajqew .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#wvhozajqew .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wvhozajqew .gt_left {
+  text-align: left;
+}
+
+#wvhozajqew .gt_center {
+  text-align: center;
+}
+
+#wvhozajqew .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#wvhozajqew .gt_font_normal {
+  font-weight: normal;
+}
+
+#wvhozajqew .gt_font_bold {
+  font-weight: bold;
+}
+
+#wvhozajqew .gt_font_italic {
+  font-style: italic;
+}
+
+#wvhozajqew .gt_super {
+  font-size: 65%;
+}
+
+#wvhozajqew .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#wvhozajqew .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#wvhozajqew .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#wvhozajqew .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#wvhozajqew .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#wvhozajqew .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#wvhozajqew .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#wvhozajqew .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#wvhozajqew div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_col_headings header">
+<th id="obs_state" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">obs_state</th>
+<th id="record_type" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">record_type</th>
+<th id="organism_name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">organism_name</th>
+<th id="total_trips" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">total_trips</th>
+<th id="total_obsv" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">total_obsv</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="obs_state">Australian Capital Territory</td>
+<td class="gt_row gt_center" headers="record_type">HUMAN_OBSERVATION</td>
+<td class="gt_row gt_left" headers="organism_name">Gouldian finch</td>
+<td class="gt_row gt_right" headers="total_trips">123.7700</td>
+<td class="gt_row gt_right" headers="total_obsv">33</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="obs_state">New South Wales</td>
+<td class="gt_row gt_center" headers="record_type">HUMAN_OBSERVATION</td>
+<td class="gt_row gt_left" headers="organism_name">Glowworm</td>
+<td class="gt_row gt_right" headers="total_trips">1748.0298</td>
+<td class="gt_row gt_right" headers="total_obsv">202</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="obs_state">New South Wales</td>
+<td class="gt_row gt_center" headers="record_type">HUMAN_OBSERVATION</td>
+<td class="gt_row gt_left" headers="organism_name">Gouldian finch</td>
+<td class="gt_row gt_right" headers="total_trips">473.6721</td>
+<td class="gt_row gt_right" headers="total_obsv">34</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="obs_state">New South Wales</td>
+<td class="gt_row gt_center" headers="record_type">HUMAN_OBSERVATION</td>
+<td class="gt_row gt_left" headers="organism_name">Manta ray</td>
+<td class="gt_row gt_right" headers="total_trips">3896.4581</td>
+<td class="gt_row gt_right" headers="total_obsv">148</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="obs_state">New South Wales</td>
+<td class="gt_row gt_center" headers="record_type">MACHINE_OBSERVATION</td>
+<td class="gt_row gt_left" headers="organism_name">Manta ray</td>
+<td class="gt_row gt_right" headers="total_trips">12008.2212</td>
+<td class="gt_row gt_right" headers="total_obsv">668</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="obs_state">New South Wales</td>
+<td class="gt_row gt_center" headers="record_type">OBSERVATION</td>
+<td class="gt_row gt_left" headers="organism_name">Manta ray</td>
+<td class="gt_row gt_right" headers="total_trips">373.7776</td>
+<td class="gt_row gt_right" headers="total_obsv">74</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>From this data I created a scatter-plot to view the total observations of each species by the number of total trips with the points colored by the organism name that the observation represents. The Orchids were dropped from the data when making the scatter-plot since the question specifies animal observations. The data was also filtered to only look at human observations since the question asks about the relation of the observation of animals and number of tourists, thus a machine observation would not fit the parameters of the question.</p>
+<p>When the first scatter-plot was created the majority of the points were in the bottom left corner of the plot with only one or two at extreme ends. From this I used the <code>ggforce</code> package’s <code>facet_zoom()</code> function to zoom into the bottom left corner without cutting out any data.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Ecotourism_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We can see a positive correlation between the number of tourist trips and number of organism observations. This can be due to the fact that the more people there are the more likely it is to see an organism. The one organism that has observations decrease while tourist trips increase are the Manta Rays. This could be due to the location of the trips, which Australian state it took place in, and whether there are more manta rays in one state than the other. The two points are also fairly close to each other on the scatter plot and the slight decrease could have many other factors impacting it.</p>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<section id="question-one-1" class="level4">
+<h4 class="anchored" data-anchor-id="question-one-1">Question One</h4>
+<p>Ultimately the observation of Gouldian finches occur under little to no precipitation and low winds. The temperature where gouldian finches were mostly observed was in the mid 20s to the low 30s (degrees Celsius). Dewpoint appears to have little affect on the observations of Gouldian finches.</p>
+</section>
+<section id="question-two-1" class="level4">
+<h4 class="anchored" data-anchor-id="question-two-1">Question Two</h4>
+<p>Warmer weather creates more tourist trips in regions as well as non-rainy weather. Quarter three showed the highest number of tourist trips in a region which could be due to typical vacationing times and the season among other factors.</p>
+</section>
+<section id="question-three-1" class="level4">
+<h4 class="anchored" data-anchor-id="question-three-1">Question Three</h4>
+<p>The number of observations of animals increases with the increase in tourist trips, resulting in a positive correlation between the two variables. The organism with the most observations and tourist trips occuring was the Gouldian finch at nearly 25,000 observations and over 500,000 tourist trips.</p>
+</section>
+</section>
+<section id="sources" class="level2">
+<h2 class="anchored" data-anchor-id="sources">Sources</h2>
+<p>Cook D, Cook L, Vahdat Atashgah J (2025). <em>ecotourism: Collection of Data on Wildlife Sightings, Tourism Counts, and Weather from Australia</em>. doi:10.32614/CRAN.package.ecotourism <a href="https://doi.org/10.32614/CRAN.package.ecotourism" class="uri">https://doi.org/10.32614/CRAN.package.ecotourism</a>. R package version 0.1.0, <a href="https://CRAN.R-project.org/package=ecotourism" class="uri">https://CRAN.R-project.org/package=ecotourism</a>.</p>
+<p>Harmon J, Hughes E (2026). <em>tidytuesdayR: Access the Weekly ‘TidyTuesday’ Project Dataset</em>. doi:10.32614/CRAN.package.tidytuesdayR <a href="https://doi.org/10.32614/CRAN.package.tidytuesdayR" class="uri">https://doi.org/10.32614/CRAN.package.tidytuesdayR</a>. R package version 1.3.2, <a href="https://CRAN.R-project.org/package=tidytuesdayR" class="uri">https://CRAN.R-project.org/package=tidytuesdayR</a>.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
