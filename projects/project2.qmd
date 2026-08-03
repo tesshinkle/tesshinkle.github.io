@@ -1,7 +1,80 @@
 ---
 title: "Summer 2026"
-format: html
+description: "My projects from the Carnegie Mellon Sports Analytics Camp"
+image: ../images/cmu.png
+format: 
+  html:
+    toc: true
+    toc-location: left
+    toc-title: "Contents"
+execute:
+  echo: false
+  warning: false
+  message: false
 ---
+
+#### Women Tennis EDA
+
+My first project during the CMSACamp centered around data visualization and analysis. 
+
+```{r}
+library(tidyverse)
+require(mosaic)
+require(performance)
+require(ggplot2)
+require(purrr)
+
+wta_2021_2026_matches <- read_csv("https://raw.githubusercontent.com/36-SURE/2026/main/data/wta_matches_2021_2026.csv")
+
+
+wta_2021_2026_matches = wta_2021_2026_matches |>
+  mutate(surface = factor(tolower(surface)))
+
+wta_2021_2026_matches <- wta_2021_2026_matches |>
+  mutate(tournament = case_when(tourney_level == "O" ~ "Olympics", 
+                                tourney_level == "P" ~ "Premier",
+                                tourney_level == "PM" ~ "Premier Mandatory", 
+                                tourney_level == "I"~ "International",
+                                tourney_level == "G" ~ "Grand Slams", 
+                                tourney_level == "F" ~ "Tour Finals",
+                                tourney_level == "D" ~ "Bille Jean King Cup",
+                                tourney_level == "W" ~ "ITF Tournament",
+                                tourney_level == "35+H" ~ "ITF Tournament",
+                                tourney_level == "50+H" ~ "ITF Tournament")) |>
+  mutate(tournament = as.factor(tournament)) |>
+  mutate(winner_seed = as.numeric(winner_seed)) |>
+  mutate(loser_seed = as.numeric(loser_seed))
+
+wta_long = wta_2021_2026_matches |>
+  rename_with(~ sub("^w_", "winner_", .x), starts_with("w_")) |>
+  rename_with(~ sub("^l_", "loser_", .x), starts_with("l_")) |>
+  pivot_longer(
+    cols = matches("^(winner|loser)_"),
+    names_to = c("outcome", ".value"),
+    names_pattern = "(winner|loser)_(.*)"
+  ) 
+
+wta_long = wta_long |>
+  rename( firstIn = `1stIn`,
+          firstWon = `1stWon`,
+          secWon = `2ndWon`)
+```
+
+The first question that was answered **Is the number of aces in a match affected by surface type and are these numbers affected by the distribution of surfaces by tournament level?**
+
+```{r}
+wta_2021_2026_matches |>
+  select(surface, tournament) |>
+  drop_na() |>
+  ggplot(aes(x = tournament, fill = surface)) +
+  geom_bar(col = "black") +
+  labs(x= "Tournament Level", y = "", 
+       title = "Visualization of Surfaces used per Tournament Level") +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 45, 
+                                   vjust = 1, hjust = 1)) 
+```
+
 
 #### Quantifying Faceoffs and Identifying High-Leverage Performance in the NHL
 
