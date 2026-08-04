@@ -7,62 +7,6 @@
     "text": "Summer 2026\n\n\nMy projects from the Carnegie Mellon Sports Analytics Camp\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTidy Tuesday Challenges\n\n\nMy weekly data visualization entries and code configurations.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUndergraduate Research\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "projects/tidytuesday.html",
-    "href": "projects/tidytuesday.html",
-    "title": "Tidy Tuesday Challenges",
-    "section": "",
-    "text": "Welcome to my Tidy Tuesday hub! Below you can find my weekly submissions.\n\n\n\n\n\n\n\n\n\n\n\n\nEcotourism\n\n\n\n\n\n\nTess Hinkle\n\n\nAug 2, 2026\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "projects/project1.html",
-    "href": "projects/project1.html",
-    "title": "Undergraduate Research",
-    "section": "",
-    "text": "Does Age Impact Success in Formula One\nMy current undergraduate research is Formula One Sports Analytics. In Spring 2026 I looked into if age impacted the yearly points of a driver. With this I created a Generalized Additive Mixed Model of the ages of the drivers, the individual drivers, and the respective season (2016-2025)."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Tess Hinkle",
-    "section": "",
-    "text": "LinkedIn\n  \n  \n    \n     GitHub\n  \n  \n    \n     Email\n  \n\n  \n  \nHi, thanks so much for visiting my website!\n\n\nMurray State University | Murray, KY | Bachelor’s in Mathematics\n\n\n\nCarnegie Mellon University Undergraduate Research Experience in Sports Analytics. My research topic was Quantifying Faceoffs and Identifying High Leverage Performance in the NHL and was collaborated on with Chloe Guagliano and Jack Pallotta and sponsored by the Pittsburgh Penguins.\n\n\n\nI am a current undergraduate Junior at Murray State University majoring in Mathematics and minoring in Statistics. Some of my favorite sports include Formula One, gymnastics, and pole vault.\nThis is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
-  },
-  {
-    "objectID": "index.html#education",
-    "href": "index.html#education",
-    "title": "Tess Hinkle",
-    "section": "",
-    "text": "Murray State University | Murray, KY | Bachelor’s in Mathematics"
-  },
-  {
-    "objectID": "index.html#experience",
-    "href": "index.html#experience",
-    "title": "Tess Hinkle",
-    "section": "",
-    "text": "Carnegie Mellon University Undergraduate Research Experience in Sports Analytics. My research topic was Quantifying Faceoffs and Identifying High Leverage Performance in the NHL and was collaborated on with Chloe Guagliano and Jack Pallotta and sponsored by the Pittsburgh Penguins."
-  },
-  {
-    "objectID": "index.html#about-me",
-    "href": "index.html#about-me",
-    "title": "Tess Hinkle",
-    "section": "",
-    "text": "I am a current undergraduate Junior at Murray State University majoring in Mathematics and minoring in Statistics. Some of my favorite sports include Formula One, gymnastics, and pole vault."
-  },
-  {
-    "objectID": "projects/project2.html",
-    "href": "projects/project2.html",
-    "title": "Summer 2026",
-    "section": "",
-    "text": "Women Tennis EDA\nMy first project during the CMSACamp centered around data visualization and analysis.\nThe first question that was answered Is the number of aces in a match affected by surface type and are these numbers affected by the distribution of surfaces by tournament level?\n\n\n\n\n\n\n\n\n\n\n\nQuantifying Faceoffs and Identifying High-Leverage Performance in the NHL\nThe following project looked at faceoffs and leverage in the NHL"
-  },
-  {
     "objectID": "projects/tidytuesday_challenges/Ecotourism.html",
     "href": "projects/tidytuesday_challenges/Ecotourism.html",
     "title": "Ecotourism",
@@ -103,5 +47,96 @@
     "title": "Ecotourism",
     "section": "Sources",
     "text": "Sources\nCook D, Cook L, Vahdat Atashgah J (2025). ecotourism: Collection of Data on Wildlife Sightings, Tourism Counts, and Weather from Australia. doi:10.32614/CRAN.package.ecotourism https://doi.org/10.32614/CRAN.package.ecotourism. R package version 0.1.0, https://CRAN.R-project.org/package=ecotourism.\nHarmon J, Hughes E (2026). tidytuesdayR: Access the Weekly ‘TidyTuesday’ Project Dataset. doi:10.32614/CRAN.package.tidytuesdayR https://doi.org/10.32614/CRAN.package.tidytuesdayR. R package version 1.3.2, https://CRAN.R-project.org/package=tidytuesdayR."
+  },
+  {
+    "objectID": "projects/project2.html",
+    "href": "projects/project2.html",
+    "title": "Summer 2026",
+    "section": "",
+    "text": "Women Tennis EDA\nMy first project during the CMSACamp centered around data visualization and analysis.\nThe first question that was answered Is the number of aces in a match affected by surface type and are these numbers affected by the distribution of surfaces by tournament level?\n\n\n\n\n\n\n\n\n\n\n\nQuantifying Faceoffs and Identifying High-Leverage Performance in the NHL\nThe following project looked at faceoffs and leverage in the NHL"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Tess Hinkle",
+    "section": "",
+    "text": "LinkedIn\n  \n  \n    \n     GitHub\n  \n  \n    \n     Email\n  \n\n  \n  \nHi, thanks so much for visiting my website!\n\n\nMurray State University | Murray, KY | Bachelor’s in Mathematics\n\n\n\nCarnegie Mellon University Undergraduate Research Experience in Sports Analytics. My research topic was Quantifying Faceoffs and Identifying High Leverage Performance in the NHL and was collaborated on with Chloe Guagliano and Jack Pallotta and sponsored by the Pittsburgh Penguins.\n\n\n\nI am a current undergraduate Junior at Murray State University majoring in Mathematics and minoring in Statistics. Some of my favorite sports include Formula One, gymnastics, and pole vault.\nThis is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Tess Hinkle",
+    "section": "",
+    "text": "Murray State University | Murray, KY | Bachelor’s in Mathematics"
+  },
+  {
+    "objectID": "index.html#experience",
+    "href": "index.html#experience",
+    "title": "Tess Hinkle",
+    "section": "",
+    "text": "Carnegie Mellon University Undergraduate Research Experience in Sports Analytics. My research topic was Quantifying Faceoffs and Identifying High Leverage Performance in the NHL and was collaborated on with Chloe Guagliano and Jack Pallotta and sponsored by the Pittsburgh Penguins."
+  },
+  {
+    "objectID": "index.html#about-me",
+    "href": "index.html#about-me",
+    "title": "Tess Hinkle",
+    "section": "",
+    "text": "I am a current undergraduate Junior at Murray State University majoring in Mathematics and minoring in Statistics. Some of my favorite sports include Formula One, gymnastics, and pole vault."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "projects/project1.html",
+    "href": "projects/project1.html",
+    "title": "Undergraduate Research",
+    "section": "",
+    "text": "Does Age Impact Success in Formula One\nMy current undergraduate research is Formula One Sports Analytics. In Spring 2026 I looked into if age impacted the yearly points of a driver. With this I created a Generalized Additive Mixed Model of the ages of the drivers, the individual drivers, and the respective season (2016-2025)."
+  },
+  {
+    "objectID": "projects/tidytuesday.html",
+    "href": "projects/tidytuesday.html",
+    "title": "Tidy Tuesday Challenges",
+    "section": "",
+    "text": "Welcome to my Tidy Tuesday hub! Below you can find my weekly submissions.\n\n\n\n\n\n\n\n\n\n\n\n\nEcotourism\n\n\n\n\n\n\nTess Hinkle\n\n\nAug 2, 2026\n\n\n\n\n\n\n\n\n\n\n\nLesotho Wool Trade\n\n\n\n\n\n\nTess Hinkle\n\n\nAug 4, 2026\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "projects/tidytuesday_challenges/Wool.html",
+    "href": "projects/tidytuesday_challenges/Wool.html",
+    "title": "Lesotho Wool Trade",
+    "section": "",
+    "text": "The August 4th Tidy Tuesday Challenge is all about the Lesotho Wool Trade. The data for the challenge was sourced from the comtradr R package.\nThe Lesotho economy is heavily dependent on the wool trade with over 800,000 herders tending to the country’s sheep and goats. The people of Lesotho are referred as the Basotho. This Tuesday takes a look at the impact of the winter months on the wool trade as well as the countries that import wool from Lesotho."
+  },
+  {
+    "objectID": "projects/tidytuesday_challenges/Wool.html#question-one",
+    "href": "projects/tidytuesday_challenges/Wool.html#question-one",
+    "title": "Lesotho Wool Trade",
+    "section": "Question One",
+    "text": "Question One\nThe first question of the wool trade challenge is Does Winter (being in the Southern hemisphere, these are the months June, July and August) impact Basotho wool quantity/volume exported and revenue? The data for this question looked at the year, month, net weight , and primary value of the commodity (USD). Two variables were also created for the data, a month description, providing the name of the month rather than the number, and the quarter of the year.\nThe following six rows is a snippet of the data set used to answer the question.\n\n\n\n\n\n\n\n\nref_year\nref_month\nreporter_desc\nnet_wgt\nprimary_value\nmonth_desc\nquarter\n\n\n\n\n2010\n1\nSouth Africa\n360890\n486974.381\nJanuary\n1\n\n\n2010\n2\nSouth Africa\n2048\n347266.594\nFebruary\n1\n\n\n2010\n3\nSouth Africa\n27869\n65188.944\nMarch\n1\n\n\n2010\n4\nSouth Africa\n27\n12909.728\nApril\n2\n\n\n2010\n5\nSouth Africa\n2\n2875.444\nMay\n2\n\n\n2010\n6\nSouth Africa\n57268\n247169.518\nJune\n2\n\n\n\n\n\n\n\nFrom this data set the net weight and and primary values of the commodity for each month were looked at separately, both the box plot and beeswarm plot were plotted for each variable grouped together. In these two grouped plots we can notice a significant dip in wool quantity (net weight) and revenue (primary value) during the winter months of June, July and August.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe two grouped plots of net weight and primary value show that two of our winter months (July and August) are heavily impacted in both categories. Meanwhile June is not as impacted in the value of the commodity, with its spread appearing very similar to that of February, March, and September. However the spread of June’s net weight can only slightly compare to September’s with similar max points where as September is more evenly spread and June has more points clustered at the lower end of the net weight.\nFrom looking at the two variables separately I then went on to look at the relationship of the variables. The first scatter plot looks at the relationship of primary value and net weight colored by the quarter of the year.\n\n\n\n\n\n\n\n\n\nIn the scatter plot above we can see that quarter three has the lowest overall primary value and net weight. We also notice that quarter one and two appear to have similar max value of commodity however Q1 has the higher net weight compared to Q2 which could be due to quarter two having June (one of the winter months). Quarter four then appears to be the best performing in the value of the commodity and nearly matches the first quarter in net weight.\nI then separated this scatter plot into the separate months so that we can see the real impact of the winter months. The scatter plots are still colored by the quarter of the year the month falls under for continuity with the previous scatter plot.\n\n\n\n\n\n\n\n\n\nIn this scatter plot we can see that the winter months (June, July, and August) produce much lower net weight and primary value in wool compared to other months. The only exception to could be the month of June where it is very close to several other months in primary revenue but still fairly low in the net weight category. Ultimately the month that is the most heavily impacted is August."
+  },
+  {
+    "objectID": "projects/tidytuesday_challenges/Wool.html#question-two",
+    "href": "projects/tidytuesday_challenges/Wool.html#question-two",
+    "title": "Lesotho Wool Trade",
+    "section": "Question Two",
+    "text": "Question Two\nThe second question in the wool trade challenge is Which country imports the most Basotho wool at a time on average? For this question I looked at the average imports (Net Weight of Commodity) by year and month separately and which countries were receiving the commodity. The following six rows of each table represents the data used to answer the question. The avg_net_wgt column is recorded in kg.\n\n\n\n\n\n\n\n\nMonthly Data\n\n\nref_month\nreporter_desc\navg_net_wgt\n\n\n\n\n1\nChina\n318657.45\n\n\n1\nIndia\n35810.67\n\n\n1\nSouth Africa\n753520.89\n\n\n1\nUruguay\n24051.70\n\n\n2\nChina\n233033.26\n\n\n2\nIndia\n9020.00\n\n\n\n\n\n\n\n\n\n\n\n\n\nYearly Data\n\n\nref_year\nreporter_desc\navg_net_wgt\n\n\n\n\n2010\nSouth Africa\n73721.33\n\n\n2011\nIndia\n47979.80\n\n\n2011\nSouth Africa\n170772.33\n\n\n2012\nIndia\n64147.80\n\n\n2012\nSouth Africa\n286285.83\n\n\n2013\nIndia\n41265.00\n\n\n\n\n\n\n\nTaking a look at the monthly import data I created a bar plot with the x-axis being the number of the month and the y-axis being the average net weight of the commodity (kg). The bars were then filled by the country importing the commodity.\n\n\n\n\n\n\n\n\n\nIn the bar plot South Africa Appears to be the largest importer with China being second. We also can notice that Uruguay is a fairly small importer, only receiving wool in January and May. South Africa being a large import makes geographical sense since Lesotho is surrounded by South Africa.\nThe next bar plot looks at the imports by year. The x-axis is the year with the y-axis being the average net weight of the commodity imported (kg) that year. The bars were then filled with the country importing the commodity.\n\n\n\n\n\n\n\n\n\nThe context of the yearly imports adds to the context of the monthly imports. Since Uruguay only imported wool for one year (2023) it is more understandable that the country would only have data for one month. Also the fact that South Africa has imported wool for the entire span of our data it is also understandable that they have the largest monthly net weight. India’s importing also similarly matches in net weight to it’s monthly net weight. We can see that China entered the wool importing at 2016 and then held the majority of the wool importing business from 2017-2019 then dropped off. This change could be due to the COVID-19 pandemic because we see a gradual increase in China’s importing starting in 2023, China may go back to being the major importer in following years or they may find other countries to import from and stay at the same level as 2023 and 2024."
+  },
+  {
+    "objectID": "projects/tidytuesday_challenges/Wool.html#summary",
+    "href": "projects/tidytuesday_challenges/Wool.html#summary",
+    "title": "Lesotho Wool Trade",
+    "section": "Summary",
+    "text": "Summary\nUltimately the production and revenue of the wool trade is impacted by the winter months, more specifically July and August.\nFrom our EDA we can tell that South Africa has imported the most wool yearly except in 2017- 2019 where China was the largest importer. The difference between which country imports the most wool monthly shifts between China and South Africa with China dominating from March to August. South Africa then dominates the wool imports for the other six months."
+  },
+  {
+    "objectID": "projects/tidytuesday_challenges/Wool.html#sources",
+    "href": "projects/tidytuesday_challenges/Wool.html#sources",
+    "title": "Lesotho Wool Trade",
+    "section": "Sources",
+    "text": "Sources\nBochtler P, Goers H, Muir C (2026). comtradr: Interface with the United Nations Comtrade API. doi:10.32614/CRAN.package.comtradr https://doi.org/10.32614/CRAN.package.comtradr. R package version 1.0.6, https://CRAN.R-project.org/package=comtradr.\nHarmon J, Hughes E (2026). tidytuesdayR: Access the Weekly ‘TidyTuesday’ Project Dataset. doi:10.32614/CRAN.package.tidytuesdayR https://doi.org/10.32614/CRAN.package.tidytuesdayR. R package version 1.3.2, https://CRAN.R-project.org/package=tidytuesdayR."
   }
 ]

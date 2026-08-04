@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Tess Hinkle">
-<meta name="dcterms.date" content="2026-08-02">
+<meta name="dcterms.date" content="2026-08-04">
 
-<title>Ecotourism – Tess Hinkle</title>
+<title>Lesotho Wool Trade – Tess Hinkle</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -294,7 +294,6 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#question-one" id="toc-question-one" class="nav-link active" data-scroll-target="#question-one">Question One</a></li>
   <li><a href="#question-two" id="toc-question-two" class="nav-link" data-scroll-target="#question-two">Question Two</a></li>
-  <li><a href="#question-three" id="toc-question-three" class="nav-link" data-scroll-target="#question-three">Question Three</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   <li><a href="#sources" id="toc-sources" class="nav-link" data-scroll-target="#sources">Sources</a></li>
   </ul>
@@ -310,7 +309,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Ecotourism</h1>
+<h1 class="title">Lesotho Wool Trade</h1>
 </div>
 
 
@@ -327,7 +326,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 2, 2026</p>
+      <p class="date">August 4, 2026</p>
     </div>
   </div>
   
@@ -339,31 +338,31 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The July 28th <a href="https://github.com/rfordatascience/tidytuesday/blob/main/data/2026/2026-07-28/readme.md">Tidy Tuesday</a> challenge was centered around ecotourism in Australia. The data was sourced from the <code>ecotourism</code> R package. The R package provides tools to analyse ecological observation data alongside weather conditions and tourism data.</p>
+<p>The August 4th <a href="https://github.com/rfordatascience/tidytuesday/blob/main/data/2026/2026-08-04/readme.md">Tidy Tuesday</a> Challenge is all about the Lesotho Wool Trade. The data for the challenge was sourced from the <code>comtradr</code> R package.</p>
+<p>The Lesotho economy is heavily dependent on the wool trade with over 800,000 herders tending to the country’s sheep and goats. The people of Lesotho are referred as the Basotho. This Tuesday takes a look at the impact of the winter months on the wool trade as well as the countries that import wool from Lesotho.</p>
 <section id="question-one" class="level2">
 <h2 class="anchored" data-anchor-id="question-one">Question One</h2>
-<p>The first Question in the ecotourism challenge is <strong>Under which weather conditions are you most likely to observe a Gouldian finch?</strong></p>
-<p>I combined the occurrences and weather csv files into one data set. I did a <code>right_join()</code> function on the two csv files and joined it by the <code>ws_id</code>, <code>date</code>, <code>year</code>, <code>month</code>, <code>day</code>, <code>weekday</code>, and <code>dayofyear</code> variables. After I joined these two files into one data set I then wanted only the data for the Gouldian finches and weather variables.</p>
-<p>The following six rows of data is a snippet of the data set I used to answer the question. The <code>temperature</code> and <code>dew point</code> columns are measured in degrees Celsius. The <code>rh</code>(raw humidity) is a percentage and <code>precipitation</code> is measured in mm while <code>wind speed</code> is measured in m/s.</p>
+<p>The first question of the wool trade challenge is <strong>Does Winter (being in the Southern hemisphere, these are the months June, July and August) impact Basotho wool quantity/volume exported and revenue?</strong> The data for this question looked at the year, month, net weight , and primary value of the commodity (USD). Two variables were also created for the data, a month description, providing the name of the month rather than the number, and the quarter of the year.</p>
+<p>The following six rows is a snippet of the data set used to answer the question.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="ubscrakgkw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ubscrakgkw table {
+<div id="fhjfzdcfsj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#fhjfzdcfsj table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ubscrakgkw thead, #ubscrakgkw tbody, #ubscrakgkw tfoot, #ubscrakgkw tr, #ubscrakgkw td, #ubscrakgkw th {
+#fhjfzdcfsj thead, #fhjfzdcfsj tbody, #fhjfzdcfsj tfoot, #fhjfzdcfsj tr, #fhjfzdcfsj td, #fhjfzdcfsj th {
   border-style: none;
 }
 
-#ubscrakgkw p {
+#fhjfzdcfsj p {
   margin: 0;
   padding: 0;
 }
 
-#ubscrakgkw .gt_table {
+#fhjfzdcfsj .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -389,12 +388,12 @@ ul.task-list li input[type="checkbox"] {
   border-left-color: #D3D3D3;
 }
 
-#ubscrakgkw .gt_caption {
+#fhjfzdcfsj .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ubscrakgkw .gt_title {
+#fhjfzdcfsj .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -406,7 +405,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-width: 0;
 }
 
-#ubscrakgkw .gt_subtitle {
+#fhjfzdcfsj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -418,7 +417,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-width: 0;
 }
 
-#ubscrakgkw .gt_heading {
+#fhjfzdcfsj .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -430,13 +429,13 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#ubscrakgkw .gt_bottom_border {
+#fhjfzdcfsj .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ubscrakgkw .gt_col_headings {
+#fhjfzdcfsj .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -451,7 +450,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#ubscrakgkw .gt_col_heading {
+#fhjfzdcfsj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -471,7 +470,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#ubscrakgkw .gt_column_spanner_outer {
+#fhjfzdcfsj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -483,15 +482,15 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 4px;
 }
 
-#ubscrakgkw .gt_column_spanner_outer:first-child {
+#fhjfzdcfsj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ubscrakgkw .gt_column_spanner_outer:last-child {
+#fhjfzdcfsj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ubscrakgkw .gt_column_spanner {
+#fhjfzdcfsj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -503,11 +502,11 @@ ul.task-list li input[type="checkbox"] {
   width: 100%;
 }
 
-#ubscrakgkw .gt_spanner_row {
+#fhjfzdcfsj .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ubscrakgkw .gt_group_heading {
+#fhjfzdcfsj .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -533,7 +532,7 @@ ul.task-list li input[type="checkbox"] {
   text-align: left;
 }
 
-#ubscrakgkw .gt_empty_group_heading {
+#fhjfzdcfsj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -548,15 +547,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 
-#ubscrakgkw .gt_from_md > :first-child {
+#fhjfzdcfsj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ubscrakgkw .gt_from_md > :last-child {
+#fhjfzdcfsj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ubscrakgkw .gt_row {
+#fhjfzdcfsj .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -575,7 +574,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#ubscrakgkw .gt_stub {
+#fhjfzdcfsj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -588,7 +587,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#ubscrakgkw .gt_stub_row_group {
+#fhjfzdcfsj .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -602,15 +601,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: top;
 }
 
-#ubscrakgkw .gt_row_group_first td {
+#fhjfzdcfsj .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ubscrakgkw .gt_row_group_first th {
+#fhjfzdcfsj .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ubscrakgkw .gt_summary_row {
+#fhjfzdcfsj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -620,16 +619,16 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#ubscrakgkw .gt_first_summary_row {
+#fhjfzdcfsj .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ubscrakgkw .gt_first_summary_row.thick {
+#fhjfzdcfsj .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ubscrakgkw .gt_last_summary_row {
+#fhjfzdcfsj .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -639,7 +638,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#ubscrakgkw .gt_grand_summary_row {
+#fhjfzdcfsj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -649,7 +648,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#ubscrakgkw .gt_first_grand_summary_row {
+#fhjfzdcfsj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -659,7 +658,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-color: #D3D3D3;
 }
 
-#ubscrakgkw .gt_last_grand_summary_row_top {
+#fhjfzdcfsj .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -669,11 +668,11 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#ubscrakgkw .gt_striped {
+#fhjfzdcfsj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ubscrakgkw .gt_table_body {
+#fhjfzdcfsj .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -682,7 +681,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#ubscrakgkw .gt_footnotes {
+#fhjfzdcfsj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -696,7 +695,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#ubscrakgkw .gt_footnote {
+#fhjfzdcfsj .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -705,7 +704,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#ubscrakgkw .gt_sourcenotes {
+#fhjfzdcfsj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -719,7 +718,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#ubscrakgkw .gt_sourcenote {
+#fhjfzdcfsj .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -727,72 +726,72 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#ubscrakgkw .gt_left {
+#fhjfzdcfsj .gt_left {
   text-align: left;
 }
 
-#ubscrakgkw .gt_center {
+#fhjfzdcfsj .gt_center {
   text-align: center;
 }
 
-#ubscrakgkw .gt_right {
+#fhjfzdcfsj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ubscrakgkw .gt_font_normal {
+#fhjfzdcfsj .gt_font_normal {
   font-weight: normal;
 }
 
-#ubscrakgkw .gt_font_bold {
+#fhjfzdcfsj .gt_font_bold {
   font-weight: bold;
 }
 
-#ubscrakgkw .gt_font_italic {
+#fhjfzdcfsj .gt_font_italic {
   font-style: italic;
 }
 
-#ubscrakgkw .gt_super {
+#fhjfzdcfsj .gt_super {
   font-size: 65%;
 }
 
-#ubscrakgkw .gt_footnote_marks {
+#fhjfzdcfsj .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ubscrakgkw .gt_asterisk {
+#fhjfzdcfsj .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ubscrakgkw .gt_indent_1 {
+#fhjfzdcfsj .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ubscrakgkw .gt_indent_2 {
+#fhjfzdcfsj .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ubscrakgkw .gt_indent_3 {
+#fhjfzdcfsj .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ubscrakgkw .gt_indent_4 {
+#fhjfzdcfsj .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ubscrakgkw .gt_indent_5 {
+#fhjfzdcfsj .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ubscrakgkw .katex-display {
+#fhjfzdcfsj .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ubscrakgkw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#fhjfzdcfsj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -800,62 +799,69 @@ ul.task-list li input[type="checkbox"] {
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_col_headings header">
-<th id="temp" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">temp</th>
-<th id="dewp" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">dewp</th>
-<th id="rh" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">rh</th>
-<th id="prcp" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">prcp</th>
-<th id="wind_speed" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">wind_speed</th>
-<th id="organism_name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">organism_name</th>
+<th id="ref_year" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">ref_year</th>
+<th id="ref_month" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">ref_month</th>
+<th id="reporter_desc" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">reporter_desc</th>
+<th id="net_wgt" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">net_wgt</th>
+<th id="primary_value" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">primary_value</th>
+<th id="month_desc" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">month_desc</th>
+<th id="quarter" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">quarter</th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
 <tr class="odd">
-<td class="gt_row gt_right" headers="temp">24.9</td>
-<td class="gt_row gt_right" headers="dewp">19.1</td>
-<td class="gt_row gt_right" headers="rh">70.2</td>
-<td class="gt_row gt_right" headers="prcp">0</td>
-<td class="gt_row gt_right" headers="wind_speed">2.8</td>
-<td class="gt_row gt_left" headers="organism_name">Gouldian finch</td>
+<td class="gt_row gt_right" headers="ref_year">2010</td>
+<td class="gt_row gt_right" headers="ref_month">1</td>
+<td class="gt_row gt_left" headers="reporter_desc">South Africa</td>
+<td class="gt_row gt_right" headers="net_wgt">360890</td>
+<td class="gt_row gt_right" headers="primary_value">486974.381</td>
+<td class="gt_row gt_center" headers="month_desc">January</td>
+<td class="gt_row gt_center" headers="quarter">1</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_right" headers="temp">23.1</td>
-<td class="gt_row gt_right" headers="dewp">16.1</td>
-<td class="gt_row gt_right" headers="rh">64.7</td>
-<td class="gt_row gt_right" headers="prcp">0</td>
-<td class="gt_row gt_right" headers="wind_speed">2.5</td>
-<td class="gt_row gt_left" headers="organism_name">Gouldian finch</td>
+<td class="gt_row gt_right" headers="ref_year">2010</td>
+<td class="gt_row gt_right" headers="ref_month">2</td>
+<td class="gt_row gt_left" headers="reporter_desc">South Africa</td>
+<td class="gt_row gt_right" headers="net_wgt">2048</td>
+<td class="gt_row gt_right" headers="primary_value">347266.594</td>
+<td class="gt_row gt_center" headers="month_desc">February</td>
+<td class="gt_row gt_center" headers="quarter">1</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_right" headers="temp">23.1</td>
-<td class="gt_row gt_right" headers="dewp">17.7</td>
-<td class="gt_row gt_right" headers="rh">71.7</td>
-<td class="gt_row gt_right" headers="prcp">0</td>
-<td class="gt_row gt_right" headers="wind_speed">2.3</td>
-<td class="gt_row gt_left" headers="organism_name">Gouldian finch</td>
+<td class="gt_row gt_right" headers="ref_year">2010</td>
+<td class="gt_row gt_right" headers="ref_month">3</td>
+<td class="gt_row gt_left" headers="reporter_desc">South Africa</td>
+<td class="gt_row gt_right" headers="net_wgt">27869</td>
+<td class="gt_row gt_right" headers="primary_value">65188.944</td>
+<td class="gt_row gt_center" headers="month_desc">March</td>
+<td class="gt_row gt_center" headers="quarter">1</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_right" headers="temp">25.8</td>
-<td class="gt_row gt_right" headers="dewp">16.2</td>
-<td class="gt_row gt_right" headers="rh">55.4</td>
-<td class="gt_row gt_right" headers="prcp">0</td>
-<td class="gt_row gt_right" headers="wind_speed">2.8</td>
-<td class="gt_row gt_left" headers="organism_name">Gouldian finch</td>
+<td class="gt_row gt_right" headers="ref_year">2010</td>
+<td class="gt_row gt_right" headers="ref_month">4</td>
+<td class="gt_row gt_left" headers="reporter_desc">South Africa</td>
+<td class="gt_row gt_right" headers="net_wgt">27</td>
+<td class="gt_row gt_right" headers="primary_value">12909.728</td>
+<td class="gt_row gt_center" headers="month_desc">April</td>
+<td class="gt_row gt_center" headers="quarter">2</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_right" headers="temp">25.4</td>
-<td class="gt_row gt_right" headers="dewp">20.1</td>
-<td class="gt_row gt_right" headers="rh">72.5</td>
-<td class="gt_row gt_right" headers="prcp">0</td>
-<td class="gt_row gt_right" headers="wind_speed">2.9</td>
-<td class="gt_row gt_left" headers="organism_name">Gouldian finch</td>
+<td class="gt_row gt_right" headers="ref_year">2010</td>
+<td class="gt_row gt_right" headers="ref_month">5</td>
+<td class="gt_row gt_left" headers="reporter_desc">South Africa</td>
+<td class="gt_row gt_right" headers="net_wgt">2</td>
+<td class="gt_row gt_right" headers="primary_value">2875.444</td>
+<td class="gt_row gt_center" headers="month_desc">May</td>
+<td class="gt_row gt_center" headers="quarter">2</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_right" headers="temp">25.4</td>
-<td class="gt_row gt_right" headers="dewp">20.1</td>
-<td class="gt_row gt_right" headers="rh">72.5</td>
-<td class="gt_row gt_right" headers="prcp">0</td>
-<td class="gt_row gt_right" headers="wind_speed">2.9</td>
-<td class="gt_row gt_left" headers="organism_name">Gouldian finch</td>
+<td class="gt_row gt_right" headers="ref_year">2010</td>
+<td class="gt_row gt_right" headers="ref_month">6</td>
+<td class="gt_row gt_left" headers="reporter_desc">South Africa</td>
+<td class="gt_row gt_right" headers="net_wgt">57268</td>
+<td class="gt_row gt_right" headers="primary_value">247169.518</td>
+<td class="gt_row gt_center" headers="month_desc">June</td>
+<td class="gt_row gt_center" headers="quarter">2</td>
 </tr>
 </tbody>
 </table>
@@ -863,44 +869,69 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>After combining the data and selecting specific weather variables and filtering for just the Gouldian Finch, I created density plots of the weather variables. This is to indicate which weather conditions the observations of the Gouldian finch is highest. The variable <code>rh</code> was not used as one of the density plots since dew point directly affects the raw humidity.</p>
+<p>From this data set the net weight and and primary values of the commodity for each month were looked at separately, both the box plot and beeswarm plot were plotted for each variable grouped together. In these two grouped plots we can notice a significant dip in wool quantity (net weight) and revenue (primary value) during the winter months of June, July and August.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Ecotourism_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="Wool_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Wool_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>From the graph we can notice that high observations of Gouldian Finches occur with relatively no precipitation and low wind speeds. High densities at the low end of precipitation and wind speed are plausible due to the fact that the Gouldian finch is a fairly small bird and may not fly with ease in high winds or high precipitation.</p>
-<p>There is also a fairly high density of Gouldian finch observations when the temperatures are in the mid to high 20s. This density could be due to increase of tourists in warmer weather rather than Gouldian finches just liking warm weather.</p>
-<p>The density plot of Gouldian finch observations with dew point is fairly spread out not telling us much information. The finch could not be effected by dew point or trips that observe the finch merely occur at various dew points.</p>
+<p>The two grouped plots of net weight and primary value show that two of our winter months (July and August) are heavily impacted in both categories. Meanwhile June is not as impacted in the value of the commodity, with its spread appearing very similar to that of February, March, and September. However the spread of June’s net weight can only slightly compare to September’s with similar max points where as September is more evenly spread and June has more points clustered at the lower end of the net weight.</p>
+<p>From looking at the two variables separately I then went on to look at the relationship of the variables. The first scatter plot looks at the relationship of primary value and net weight colored by the quarter of the year.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Wool_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>In the scatter plot above we can see that quarter three has the lowest overall primary value and net weight. We also notice that quarter one and two appear to have similar max value of commodity however Q1 has the higher net weight compared to Q2 which could be due to quarter two having June (one of the winter months). Quarter four then appears to be the best performing in the value of the commodity and nearly matches the first quarter in net weight.</p>
+<p>I then separated this scatter plot into the separate months so that we can see the real impact of the winter months. The scatter plots are still colored by the quarter of the year the month falls under for continuity with the previous scatter plot.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Wool_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>In this scatter plot we can see that the winter months (June, July, and August) produce much lower net weight and primary value in wool compared to other months. The only exception to could be the month of June where it is very close to several other months in primary revenue but still fairly low in the net weight category. Ultimately the month that is the most heavily impacted is August.</p>
 </section>
 <section id="question-two" class="level2">
 <h2 class="anchored" data-anchor-id="question-two">Question Two</h2>
-<p>The second question in the ecotourism challenge is <strong>How does weather affect tourism numbers in each region?</strong></p>
-<p>To answer this question I combined the weather and tourism csv files. This was done by another <code>right_join()</code> function joining by the <code>ws_id</code> and <code>year</code> variable. After combining the two files, the new data set was grouped by the region, purpose of the visit, whether it was rainy or not, and the quarter of the year the trip occurred in. From this the total number of trips for each group was summarized and the average temperature of the trips in each group was calculated.</p>
-<p>The following six rows of data are a snippet of the data set created and used to answer the question. The column <code>total_trips</code> is in thousands and the <code>avg_temp</code> column is in degrees Celsius.</p>
+<p>The second question in the wool trade challenge is <strong>Which country imports the most Basotho wool at a time on average?</strong> For this question I looked at the average imports (Net Weight of Commodity) by year and month separately and which countries were receiving the commodity. The following six rows of each table represents the data used to answer the question. The <code>avg_net_wgt</code> column is recorded in kg.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="qxotvnnxjy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#qxotvnnxjy table {
+<div id="pyqvurfjxm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#pyqvurfjxm table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#qxotvnnxjy thead, #qxotvnnxjy tbody, #qxotvnnxjy tfoot, #qxotvnnxjy tr, #qxotvnnxjy td, #qxotvnnxjy th {
+#pyqvurfjxm thead, #pyqvurfjxm tbody, #pyqvurfjxm tfoot, #pyqvurfjxm tr, #pyqvurfjxm td, #pyqvurfjxm th {
   border-style: none;
 }
 
-#qxotvnnxjy p {
+#pyqvurfjxm p {
   margin: 0;
   padding: 0;
 }
 
-#qxotvnnxjy .gt_table {
+#pyqvurfjxm .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -926,12 +957,12 @@ ul.task-list li input[type="checkbox"] {
   border-left-color: #D3D3D3;
 }
 
-#qxotvnnxjy .gt_caption {
+#pyqvurfjxm .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#qxotvnnxjy .gt_title {
+#pyqvurfjxm .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -943,7 +974,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-width: 0;
 }
 
-#qxotvnnxjy .gt_subtitle {
+#pyqvurfjxm .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -955,7 +986,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-width: 0;
 }
 
-#qxotvnnxjy .gt_heading {
+#pyqvurfjxm .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -967,13 +998,13 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#qxotvnnxjy .gt_bottom_border {
+#pyqvurfjxm .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qxotvnnxjy .gt_col_headings {
+#pyqvurfjxm .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -988,7 +1019,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#qxotvnnxjy .gt_col_heading {
+#pyqvurfjxm .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1008,7 +1039,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#qxotvnnxjy .gt_column_spanner_outer {
+#pyqvurfjxm .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1020,15 +1051,15 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 4px;
 }
 
-#qxotvnnxjy .gt_column_spanner_outer:first-child {
+#pyqvurfjxm .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qxotvnnxjy .gt_column_spanner_outer:last-child {
+#pyqvurfjxm .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qxotvnnxjy .gt_column_spanner {
+#pyqvurfjxm .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1040,11 +1071,11 @@ ul.task-list li input[type="checkbox"] {
   width: 100%;
 }
 
-#qxotvnnxjy .gt_spanner_row {
+#pyqvurfjxm .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#qxotvnnxjy .gt_group_heading {
+#pyqvurfjxm .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1070,7 +1101,7 @@ ul.task-list li input[type="checkbox"] {
   text-align: left;
 }
 
-#qxotvnnxjy .gt_empty_group_heading {
+#pyqvurfjxm .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1085,15 +1116,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 
-#qxotvnnxjy .gt_from_md > :first-child {
+#pyqvurfjxm .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qxotvnnxjy .gt_from_md > :last-child {
+#pyqvurfjxm .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qxotvnnxjy .gt_row {
+#pyqvurfjxm .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1112,7 +1143,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#qxotvnnxjy .gt_stub {
+#pyqvurfjxm .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1125,7 +1156,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#qxotvnnxjy .gt_stub_row_group {
+#pyqvurfjxm .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1139,15 +1170,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: top;
 }
 
-#qxotvnnxjy .gt_row_group_first td {
+#pyqvurfjxm .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qxotvnnxjy .gt_row_group_first th {
+#pyqvurfjxm .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#qxotvnnxjy .gt_summary_row {
+#pyqvurfjxm .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1157,16 +1188,16 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#qxotvnnxjy .gt_first_summary_row {
+#pyqvurfjxm .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#qxotvnnxjy .gt_first_summary_row.thick {
+#pyqvurfjxm .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qxotvnnxjy .gt_last_summary_row {
+#pyqvurfjxm .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1176,7 +1207,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#qxotvnnxjy .gt_grand_summary_row {
+#pyqvurfjxm .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1186,7 +1217,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#qxotvnnxjy .gt_first_grand_summary_row {
+#pyqvurfjxm .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1196,7 +1227,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-color: #D3D3D3;
 }
 
-#qxotvnnxjy .gt_last_grand_summary_row_top {
+#pyqvurfjxm .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1206,11 +1237,11 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#qxotvnnxjy .gt_striped {
+#pyqvurfjxm .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qxotvnnxjy .gt_table_body {
+#pyqvurfjxm .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1219,7 +1250,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#qxotvnnxjy .gt_footnotes {
+#pyqvurfjxm .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1233,7 +1264,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#qxotvnnxjy .gt_footnote {
+#pyqvurfjxm .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1242,7 +1273,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#qxotvnnxjy .gt_sourcenotes {
+#pyqvurfjxm .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1256,7 +1287,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#qxotvnnxjy .gt_sourcenote {
+#pyqvurfjxm .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1264,180 +1295,141 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#qxotvnnxjy .gt_left {
+#pyqvurfjxm .gt_left {
   text-align: left;
 }
 
-#qxotvnnxjy .gt_center {
+#pyqvurfjxm .gt_center {
   text-align: center;
 }
 
-#qxotvnnxjy .gt_right {
+#pyqvurfjxm .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qxotvnnxjy .gt_font_normal {
+#pyqvurfjxm .gt_font_normal {
   font-weight: normal;
 }
 
-#qxotvnnxjy .gt_font_bold {
+#pyqvurfjxm .gt_font_bold {
   font-weight: bold;
 }
 
-#qxotvnnxjy .gt_font_italic {
+#pyqvurfjxm .gt_font_italic {
   font-style: italic;
 }
 
-#qxotvnnxjy .gt_super {
+#pyqvurfjxm .gt_super {
   font-size: 65%;
 }
 
-#qxotvnnxjy .gt_footnote_marks {
+#pyqvurfjxm .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#qxotvnnxjy .gt_asterisk {
+#pyqvurfjxm .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qxotvnnxjy .gt_indent_1 {
+#pyqvurfjxm .gt_indent_1 {
   text-indent: 5px;
 }
 
-#qxotvnnxjy .gt_indent_2 {
+#pyqvurfjxm .gt_indent_2 {
   text-indent: 10px;
 }
 
-#qxotvnnxjy .gt_indent_3 {
+#pyqvurfjxm .gt_indent_3 {
   text-indent: 15px;
 }
 
-#qxotvnnxjy .gt_indent_4 {
+#pyqvurfjxm .gt_indent_4 {
   text-indent: 20px;
 }
 
-#qxotvnnxjy .gt_indent_5 {
+#pyqvurfjxm .gt_indent_5 {
   text-indent: 25px;
 }
 
-#qxotvnnxjy .katex-display {
+#pyqvurfjxm .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#qxotvnnxjy div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#pyqvurfjxm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
-<tr class="gt_col_headings header">
-<th id="region" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">region</th>
-<th id="purpose" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">purpose</th>
-<th id="rainy" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">rainy</th>
-<th id="quarter" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">quarter</th>
-<th id="total_trips" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">total_trips</th>
-<th id="avg_temp" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">avg_temp</th>
+<tr class="gt_heading header">
+<td colspan="3" class="gt_heading gt_title gt_font_normal gt_bottom_border">Monthly Data</td>
+</tr>
+<tr class="gt_col_headings even">
+<th id="ref_month" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">ref_month</th>
+<th id="reporter_desc" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">reporter_desc</th>
+<th id="avg_net_wgt" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">avg_net_wgt</th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
 <tr class="odd">
-<td class="gt_row gt_left" headers="region">Anula</td>
-<td class="gt_row gt_left" headers="purpose">Holiday</td>
-<td class="gt_row gt_center" headers="rainy">0</td>
-<td class="gt_row gt_right" headers="quarter">4</td>
-<td class="gt_row gt_right" headers="total_trips">31.1850</td>
-<td class="gt_row gt_right" headers="avg_temp">27.62896</td>
+<td class="gt_row gt_center" headers="ref_month">1</td>
+<td class="gt_row gt_left" headers="reporter_desc">China</td>
+<td class="gt_row gt_right" headers="avg_net_wgt">318657.45</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="region">Anula</td>
-<td class="gt_row gt_left" headers="purpose">Holiday</td>
-<td class="gt_row gt_center" headers="rainy">1</td>
-<td class="gt_row gt_right" headers="quarter">4</td>
-<td class="gt_row gt_right" headers="total_trips">7.0350</td>
-<td class="gt_row gt_right" headers="avg_temp">27.64925</td>
+<td class="gt_row gt_center" headers="ref_month">1</td>
+<td class="gt_row gt_left" headers="reporter_desc">India</td>
+<td class="gt_row gt_right" headers="avg_net_wgt">35810.67</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="region">Augusta</td>
-<td class="gt_row gt_left" headers="purpose">Business</td>
-<td class="gt_row gt_center" headers="rainy">0</td>
-<td class="gt_row gt_right" headers="quarter">1</td>
-<td class="gt_row gt_right" headers="total_trips">1450.8503</td>
-<td class="gt_row gt_right" headers="avg_temp">17.29648</td>
+<td class="gt_row gt_center" headers="ref_month">1</td>
+<td class="gt_row gt_left" headers="reporter_desc">South Africa</td>
+<td class="gt_row gt_right" headers="avg_net_wgt">753520.89</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="region">Augusta</td>
-<td class="gt_row gt_left" headers="purpose">Business</td>
-<td class="gt_row gt_center" headers="rainy">0</td>
-<td class="gt_row gt_right" headers="quarter">2</td>
-<td class="gt_row gt_right" headers="total_trips">3929.8136</td>
-<td class="gt_row gt_right" headers="avg_temp">17.23252</td>
+<td class="gt_row gt_center" headers="ref_month">1</td>
+<td class="gt_row gt_left" headers="reporter_desc">Uruguay</td>
+<td class="gt_row gt_right" headers="avg_net_wgt">24051.70</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="region">Augusta</td>
-<td class="gt_row gt_left" headers="purpose">Business</td>
-<td class="gt_row gt_center" headers="rainy">0</td>
-<td class="gt_row gt_right" headers="quarter">3</td>
-<td class="gt_row gt_right" headers="total_trips">3563.1971</td>
-<td class="gt_row gt_right" headers="avg_temp">17.34637</td>
+<td class="gt_row gt_center" headers="ref_month">2</td>
+<td class="gt_row gt_left" headers="reporter_desc">China</td>
+<td class="gt_row gt_right" headers="avg_net_wgt">233033.26</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="region">Augusta</td>
-<td class="gt_row gt_left" headers="purpose">Business</td>
-<td class="gt_row gt_center" headers="rainy">1</td>
-<td class="gt_row gt_right" headers="quarter">1</td>
-<td class="gt_row gt_right" headers="total_trips">744.7144</td>
-<td class="gt_row gt_right" headers="avg_temp">14.60800</td>
+<td class="gt_row gt_center" headers="ref_month">2</td>
+<td class="gt_row gt_left" headers="reporter_desc">India</td>
+<td class="gt_row gt_right" headers="avg_net_wgt">9020.00</td>
 </tr>
 </tbody>
 </table>
 
 </div>
 </div>
-</div>
-<p>After combining the data and the grouping by specific variables I created a scatter-plot. Each dot on the scatter-plot represent a grouped region with the x-axis being the average temperature of the grouped trips and the y-axis being the total trips of each grouped region. The points are then separated into whether the trips in the region were rainy (1) or not (0). The scatter-plot was then faceted to look at the four quarters of the year individually.</p>
-<div class="cell">
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Ecotourism_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>From the scatter-plots we can tell that several regions had small total trip numbers which could be do to the popularity of the region. However, the total trip counts by region that are greater than 10,000,000 are mostly non rainy trips.</p>
-<p>We can also see a general increase in trips, both total number and overall increase in observations, when the temperature is greater than 15 degrees Celsius.</p>
-<p>Also, to note, the third quarter of the year shows the highest total_trips for a region. This high trip count may be due to visiting country’s summer months since people may be more likely to travel in July, August, and September to cooler weather (Australia is in winter during that time) in order to escape the heat.</p>
-</section>
-<section id="question-three" class="level2">
-<h2 class="anchored" data-anchor-id="question-three">Question Three</h2>
-<p>The third question in the ecotourism challenge is <strong>How do observations of the different animals relate to numbers of tourists?</strong></p>
-<p>To answer the question I combined the occurrences and tourism csv files with the <code>right_join</code> function by the <code>ws_id</code> and <code>year</code> columns. From this I then grouped the states where animals were observed, the type of observation (Human, Machine, etc.), and the type of organism. I then got the sum of tourist trips for each group and the total observations of each animal in the groups.</p>
-<p>The following six rows of data are a snippet of the data set created and used to answer the question. The column <code>total_trips</code> is reported in thousands.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="qprojhqnkb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#qprojhqnkb table {
+<div id="vevthtlkdy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#vevthtlkdy table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#qprojhqnkb thead, #qprojhqnkb tbody, #qprojhqnkb tfoot, #qprojhqnkb tr, #qprojhqnkb td, #qprojhqnkb th {
+#vevthtlkdy thead, #vevthtlkdy tbody, #vevthtlkdy tfoot, #vevthtlkdy tr, #vevthtlkdy td, #vevthtlkdy th {
   border-style: none;
 }
 
-#qprojhqnkb p {
+#vevthtlkdy p {
   margin: 0;
   padding: 0;
 }
 
-#qprojhqnkb .gt_table {
+#vevthtlkdy .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1463,12 +1455,12 @@ ul.task-list li input[type="checkbox"] {
   border-left-color: #D3D3D3;
 }
 
-#qprojhqnkb .gt_caption {
+#vevthtlkdy .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#qprojhqnkb .gt_title {
+#vevthtlkdy .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1480,7 +1472,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-width: 0;
 }
 
-#qprojhqnkb .gt_subtitle {
+#vevthtlkdy .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1492,7 +1484,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-width: 0;
 }
 
-#qprojhqnkb .gt_heading {
+#vevthtlkdy .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1504,13 +1496,13 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#qprojhqnkb .gt_bottom_border {
+#vevthtlkdy .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qprojhqnkb .gt_col_headings {
+#vevthtlkdy .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1525,7 +1517,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#qprojhqnkb .gt_col_heading {
+#vevthtlkdy .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1545,7 +1537,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#qprojhqnkb .gt_column_spanner_outer {
+#vevthtlkdy .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1557,15 +1549,15 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 4px;
 }
 
-#qprojhqnkb .gt_column_spanner_outer:first-child {
+#vevthtlkdy .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qprojhqnkb .gt_column_spanner_outer:last-child {
+#vevthtlkdy .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qprojhqnkb .gt_column_spanner {
+#vevthtlkdy .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1577,11 +1569,11 @@ ul.task-list li input[type="checkbox"] {
   width: 100%;
 }
 
-#qprojhqnkb .gt_spanner_row {
+#vevthtlkdy .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#qprojhqnkb .gt_group_heading {
+#vevthtlkdy .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1607,7 +1599,7 @@ ul.task-list li input[type="checkbox"] {
   text-align: left;
 }
 
-#qprojhqnkb .gt_empty_group_heading {
+#vevthtlkdy .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1622,15 +1614,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 
-#qprojhqnkb .gt_from_md > :first-child {
+#vevthtlkdy .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qprojhqnkb .gt_from_md > :last-child {
+#vevthtlkdy .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qprojhqnkb .gt_row {
+#vevthtlkdy .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1649,7 +1641,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#qprojhqnkb .gt_stub {
+#vevthtlkdy .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1662,7 +1654,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#qprojhqnkb .gt_stub_row_group {
+#vevthtlkdy .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1676,15 +1668,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: top;
 }
 
-#qprojhqnkb .gt_row_group_first td {
+#vevthtlkdy .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qprojhqnkb .gt_row_group_first th {
+#vevthtlkdy .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#qprojhqnkb .gt_summary_row {
+#vevthtlkdy .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1694,16 +1686,16 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#qprojhqnkb .gt_first_summary_row {
+#vevthtlkdy .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#qprojhqnkb .gt_first_summary_row.thick {
+#vevthtlkdy .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qprojhqnkb .gt_last_summary_row {
+#vevthtlkdy .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1713,7 +1705,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#qprojhqnkb .gt_grand_summary_row {
+#vevthtlkdy .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1723,7 +1715,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#qprojhqnkb .gt_first_grand_summary_row {
+#vevthtlkdy .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1733,7 +1725,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-color: #D3D3D3;
 }
 
-#qprojhqnkb .gt_last_grand_summary_row_top {
+#vevthtlkdy .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1743,11 +1735,11 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#qprojhqnkb .gt_striped {
+#vevthtlkdy .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qprojhqnkb .gt_table_body {
+#vevthtlkdy .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1756,7 +1748,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#qprojhqnkb .gt_footnotes {
+#vevthtlkdy .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1770,7 +1762,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#qprojhqnkb .gt_footnote {
+#vevthtlkdy .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1779,7 +1771,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#qprojhqnkb .gt_sourcenotes {
+#vevthtlkdy .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1793,7 +1785,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#qprojhqnkb .gt_sourcenote {
+#vevthtlkdy .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1801,128 +1793,117 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#qprojhqnkb .gt_left {
+#vevthtlkdy .gt_left {
   text-align: left;
 }
 
-#qprojhqnkb .gt_center {
+#vevthtlkdy .gt_center {
   text-align: center;
 }
 
-#qprojhqnkb .gt_right {
+#vevthtlkdy .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qprojhqnkb .gt_font_normal {
+#vevthtlkdy .gt_font_normal {
   font-weight: normal;
 }
 
-#qprojhqnkb .gt_font_bold {
+#vevthtlkdy .gt_font_bold {
   font-weight: bold;
 }
 
-#qprojhqnkb .gt_font_italic {
+#vevthtlkdy .gt_font_italic {
   font-style: italic;
 }
 
-#qprojhqnkb .gt_super {
+#vevthtlkdy .gt_super {
   font-size: 65%;
 }
 
-#qprojhqnkb .gt_footnote_marks {
+#vevthtlkdy .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#qprojhqnkb .gt_asterisk {
+#vevthtlkdy .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qprojhqnkb .gt_indent_1 {
+#vevthtlkdy .gt_indent_1 {
   text-indent: 5px;
 }
 
-#qprojhqnkb .gt_indent_2 {
+#vevthtlkdy .gt_indent_2 {
   text-indent: 10px;
 }
 
-#qprojhqnkb .gt_indent_3 {
+#vevthtlkdy .gt_indent_3 {
   text-indent: 15px;
 }
 
-#qprojhqnkb .gt_indent_4 {
+#vevthtlkdy .gt_indent_4 {
   text-indent: 20px;
 }
 
-#qprojhqnkb .gt_indent_5 {
+#vevthtlkdy .gt_indent_5 {
   text-indent: 25px;
 }
 
-#qprojhqnkb .katex-display {
+#vevthtlkdy .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#qprojhqnkb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#vevthtlkdy div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
 <table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <thead>
-<tr class="gt_col_headings header">
-<th id="obs_state" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">obs_state</th>
-<th id="record_type" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">record_type</th>
-<th id="organism_name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">organism_name</th>
-<th id="total_trips" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">total_trips</th>
-<th id="total_obsv" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">total_obsv</th>
+<tr class="gt_heading header">
+<td colspan="3" class="gt_heading gt_title gt_font_normal gt_bottom_border">Yearly Data</td>
+</tr>
+<tr class="gt_col_headings even">
+<th id="ref_year" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">ref_year</th>
+<th id="reporter_desc" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">reporter_desc</th>
+<th id="avg_net_wgt" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">avg_net_wgt</th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
 <tr class="odd">
-<td class="gt_row gt_left" headers="obs_state">Australian Capital Territory</td>
-<td class="gt_row gt_center" headers="record_type">HUMAN_OBSERVATION</td>
-<td class="gt_row gt_left" headers="organism_name">Gouldian finch</td>
-<td class="gt_row gt_right" headers="total_trips">123.7700</td>
-<td class="gt_row gt_right" headers="total_obsv">33</td>
+<td class="gt_row gt_center" headers="ref_year">2010</td>
+<td class="gt_row gt_left" headers="reporter_desc">South Africa</td>
+<td class="gt_row gt_right" headers="avg_net_wgt">73721.33</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="obs_state">New South Wales</td>
-<td class="gt_row gt_center" headers="record_type">HUMAN_OBSERVATION</td>
-<td class="gt_row gt_left" headers="organism_name">Glowworm</td>
-<td class="gt_row gt_right" headers="total_trips">1748.0298</td>
-<td class="gt_row gt_right" headers="total_obsv">202</td>
+<td class="gt_row gt_center" headers="ref_year">2011</td>
+<td class="gt_row gt_left" headers="reporter_desc">India</td>
+<td class="gt_row gt_right" headers="avg_net_wgt">47979.80</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="obs_state">New South Wales</td>
-<td class="gt_row gt_center" headers="record_type">HUMAN_OBSERVATION</td>
-<td class="gt_row gt_left" headers="organism_name">Gouldian finch</td>
-<td class="gt_row gt_right" headers="total_trips">473.6721</td>
-<td class="gt_row gt_right" headers="total_obsv">34</td>
+<td class="gt_row gt_center" headers="ref_year">2011</td>
+<td class="gt_row gt_left" headers="reporter_desc">South Africa</td>
+<td class="gt_row gt_right" headers="avg_net_wgt">170772.33</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="obs_state">New South Wales</td>
-<td class="gt_row gt_center" headers="record_type">HUMAN_OBSERVATION</td>
-<td class="gt_row gt_left" headers="organism_name">Manta ray</td>
-<td class="gt_row gt_right" headers="total_trips">3896.4581</td>
-<td class="gt_row gt_right" headers="total_obsv">148</td>
+<td class="gt_row gt_center" headers="ref_year">2012</td>
+<td class="gt_row gt_left" headers="reporter_desc">India</td>
+<td class="gt_row gt_right" headers="avg_net_wgt">64147.80</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="obs_state">New South Wales</td>
-<td class="gt_row gt_center" headers="record_type">MACHINE_OBSERVATION</td>
-<td class="gt_row gt_left" headers="organism_name">Manta ray</td>
-<td class="gt_row gt_right" headers="total_trips">12008.2212</td>
-<td class="gt_row gt_right" headers="total_obsv">668</td>
+<td class="gt_row gt_center" headers="ref_year">2012</td>
+<td class="gt_row gt_left" headers="reporter_desc">South Africa</td>
+<td class="gt_row gt_right" headers="avg_net_wgt">286285.83</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="obs_state">New South Wales</td>
-<td class="gt_row gt_center" headers="record_type">OBSERVATION</td>
-<td class="gt_row gt_left" headers="organism_name">Manta ray</td>
-<td class="gt_row gt_right" headers="total_trips">373.7776</td>
-<td class="gt_row gt_right" headers="total_obsv">74</td>
+<td class="gt_row gt_center" headers="ref_year">2013</td>
+<td class="gt_row gt_left" headers="reporter_desc">India</td>
+<td class="gt_row gt_right" headers="avg_net_wgt">41265.00</td>
 </tr>
 </tbody>
 </table>
@@ -1930,37 +1911,37 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>From this data I created a scatter-plot to view the total observations of each species by the number of total trips with the points colored by the organism name that the observation represents. The Orchids were dropped from the data when making the scatter-plot since the question specifies animal observations. The data was also filtered to only look at human observations since the question asks about the relation of the observation of animals and number of tourists, thus a machine observation would not fit the parameters of the question.</p>
-<p>When the first scatter-plot was created the majority of the points were in the bottom left corner of the plot with only one or two at extreme ends. From this I used the <code>ggforce</code> package’s <code>facet_zoom()</code> function to zoom into the bottom left corner without cutting out any data.</p>
+<p>Taking a look at the monthly import data I created a bar plot with the x-axis being the number of the month and the y-axis being the average net weight of the commodity (kg). The bars were then filled by the country importing the commodity.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Ecotourism_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="Wool_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>We can see a positive correlation between the number of tourist trips and number of organism observations. This can be due to the fact that the more people there are the more likely it is to see an organism. The one organism that has observations decrease while tourist trips increase are the Manta Rays. This could be due to the location of the trips, which Australian state it took place in, and whether there are more manta rays in one state than the other. The two points are also fairly close to each other on the scatter plot and the slight decrease could have many other factors impacting it.</p>
+<p>In the bar plot South Africa Appears to be the largest importer with China being second. We also can notice that Uruguay is a fairly small importer, only receiving wool in January and May. South Africa being a large import makes geographical sense since Lesotho is surrounded by South Africa.</p>
+<p>The next bar plot looks at the imports by year. The x-axis is the year with the y-axis being the average net weight of the commodity imported (kg) that year. The bars were then filled with the country importing the commodity.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Wool_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The context of the yearly imports adds to the context of the monthly imports. Since Uruguay only imported wool for one year (2023) it is more understandable that the country would only have data for one month. Also the fact that South Africa has imported wool for the entire span of our data it is also understandable that they have the largest monthly net weight. India’s importing also similarly matches in net weight to it’s monthly net weight. We can see that China entered the wool importing at 2016 and then held the majority of the wool importing business from 2017-2019 then dropped off. This change could be due to the COVID-19 pandemic because we see a gradual increase in China’s importing starting in 2023, China may go back to being the major importer in following years or they may find other countries to import from and stay at the same level as 2023 and 2024.</p>
 </section>
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<section id="question-one-1" class="level4">
-<h4 class="anchored" data-anchor-id="question-one-1">Question One</h4>
-<p>Ultimately the observation of Gouldian finches occur under little to no precipitation and low winds. The temperature where gouldian finches were mostly observed was in the mid 20s to the low 30s (degrees Celsius). Dewpoint appears to have little affect on the observations of Gouldian finches.</p>
-</section>
-<section id="question-two-1" class="level4">
-<h4 class="anchored" data-anchor-id="question-two-1">Question Two</h4>
-<p>Warmer weather creates more tourist trips in regions as well as non-rainy weather. Quarter three showed the highest number of tourist trips in a region which could be due to typical vacationing times and the season among other factors.</p>
-</section>
-<section id="question-three-1" class="level4">
-<h4 class="anchored" data-anchor-id="question-three-1">Question Three</h4>
-<p>The number of observations of animals increases with the increase in tourist trips, resulting in a positive correlation between the two variables. The organism with the most observations and tourist trips occuring was the Gouldian finch at nearly 25,000 observations and over 500,000 tourist trips.</p>
-</section>
+<p>Ultimately the production and revenue of the wool trade is impacted by the winter months, more specifically July and August.</p>
+<p>From our EDA we can tell that South Africa has imported the most wool yearly except in 2017- 2019 where China was the largest importer. The difference between which country imports the most wool monthly shifts between China and South Africa with China dominating from March to August. South Africa then dominates the wool imports for the other six months.</p>
 </section>
 <section id="sources" class="level2">
 <h2 class="anchored" data-anchor-id="sources">Sources</h2>
-<p>Cook D, Cook L, Vahdat Atashgah J (2025). <em>ecotourism: Collection of Data on Wildlife Sightings, Tourism Counts, and Weather from Australia</em>. doi:10.32614/CRAN.package.ecotourism <a href="https://doi.org/10.32614/CRAN.package.ecotourism" class="uri">https://doi.org/10.32614/CRAN.package.ecotourism</a>. R package version 0.1.0, <a href="https://CRAN.R-project.org/package=ecotourism" class="uri">https://CRAN.R-project.org/package=ecotourism</a>.</p>
+<p>Bochtler P, Goers H, Muir C (2026). <em>comtradr: Interface with the United Nations Comtrade API</em>. doi:10.32614/CRAN.package.comtradr <a href="https://doi.org/10.32614/CRAN.package.comtradr" class="uri">https://doi.org/10.32614/CRAN.package.comtradr</a>. R package version 1.0.6, <a href="https://CRAN.R-project.org/package=comtradr" class="uri">https://CRAN.R-project.org/package=comtradr</a>.</p>
 <p>Harmon J, Hughes E (2026). <em>tidytuesdayR: Access the Weekly ‘TidyTuesday’ Project Dataset</em>. doi:10.32614/CRAN.package.tidytuesdayR <a href="https://doi.org/10.32614/CRAN.package.tidytuesdayR" class="uri">https://doi.org/10.32614/CRAN.package.tidytuesdayR</a>. R package version 1.3.2, <a href="https://CRAN.R-project.org/package=tidytuesdayR" class="uri">https://CRAN.R-project.org/package=tidytuesdayR</a>.</p>
 
 
